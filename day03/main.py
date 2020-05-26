@@ -77,16 +77,18 @@ from uuid import UUID
 import datetime
 
 class Item8(BaseModel):
-    object_id: UUID
-    datetime1: datetime.datetime
-    date1: datetime.date
-    time1: datetime.time
-    timedelta1: datetime.timedelta
-    frozenset1: FrozenSet = None
+    # object_id: UUID
+    # datetime1: datetime.datetime
+    # date1: datetime.date
+    # time1: datetime.time
+    # timedelta1: datetime.timedelta
+    frozenset1: frozenset = None
+    byte1: bytes = None
 
 @app.post("/request_body09")
 def request_body09(item: Item8):
-    print((item.datetime1 + item.timedelta1).strftime("%Y-%m-%d %H:%M:%S"))
+    # print((item.datetime1 + item.timedelta1).strftime("%Y-%m-%d %H:%M:%S"))
+    print(item)
     return item
 
 
